@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Employment.DataAccess.DatabaseContext;
 
-internal class EmploymentDbContext
+public class EmploymentDbContext:DbContext
 {
+    public EmploymentDbContext(DbContextOptions<EmploymentDbContext> options):base(options)
+    {
+        
+    }
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	{
+		modelBuilder.ApplyConfigurationsFromAssembly(typeof(EmploymentDbContext).Assembly);
+	}
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	{
+		base.OnConfiguring(optionsBuilder);
+	}
 }

@@ -1,12 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.Metrics;
-using System.Xml.Linq;
+﻿using Employment.Sheared.Common;
 
 namespace Employment.Model.Entities;
 
-public class Employee
+public class Employee : BaseAuditableEntity,IEntity
 {
+	/// <summary>
+	/// Gets or sets the identifier.
+	/// </summary>
+	/// <value>
+	/// The identifier.
+	/// </value>
+	public int Id { get; set; }
 	/// <summary>
 	/// Gets or sets the name.
 	/// </summary>
@@ -136,4 +140,5 @@ public class Employee
 	/// The department.
 	/// </value>
 	public Department Department { get; set; }
+	
 }
