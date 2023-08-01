@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="CQRS\Department\Command\Validator\" />
-    <Folder Include="CQRS\Department\Query\Validator\" />
   </ItemGroup>
 
 </Project>

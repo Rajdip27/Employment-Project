@@ -4,6 +4,6 @@ using Employment.Service.Models.ViewModel;
 
 namespace Employment.Repositories.Interface;
 
-public interface IDepartmentRepository:IRepository<Department,VMEmployee,int>
+public interface IDepartmentRepository:IRepository<Department,VMDepartment,int>
 {
 }
