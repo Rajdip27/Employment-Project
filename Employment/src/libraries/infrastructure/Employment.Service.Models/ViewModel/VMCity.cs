@@ -1,9 +1,8 @@
 ﻿using Employment.Sheared.Common;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Employment.Model.Entities;
+namespace Employment.Service.Models.ViewModel;
 
-public class City : BaseAuditableEntity, IEntity
+public class VMCity:IVM
 {
 	/// <summary>
 	/// Gets or sets the identifier.
@@ -32,15 +31,13 @@ public class City : BaseAuditableEntity, IEntity
 	/// <value>
 	/// The state.
 	/// </value>
-	[ForeignKey("StateId")]
-	public State States { get; set; }
+	
+	public VMState States { get; set; }
 	/// <summary>
 	/// Gets or sets the employees.
 	/// </summary>
 	/// <value>
 	/// The employees.
 	/// </value>
-	public ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
-
-
+	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

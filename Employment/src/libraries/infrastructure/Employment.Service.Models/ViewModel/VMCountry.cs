@@ -1,8 +1,8 @@
 ﻿using Employment.Sheared.Common;
 
-namespace Employment.Model.Entities;
+namespace Employment.Service.Models.ViewModel;
 
-public class Country : BaseAuditableEntity, IEntity
+public class VMCountry:IVM
 {
 	/// <summary>
 	/// Gets or sets the identifier.
@@ -19,6 +19,6 @@ public class Country : BaseAuditableEntity, IEntity
 	/// </value>
 	public string CountryName { get; set; } = string.Empty;
 
-	public ICollection<State>  States { get; set; } = new HashSet<State>();
-	public ICollection<Employee> Employees { get; set; }=new HashSet<Employee>();
+	public ICollection<VMState> States { get; set; } = new HashSet<VMState>();
+	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

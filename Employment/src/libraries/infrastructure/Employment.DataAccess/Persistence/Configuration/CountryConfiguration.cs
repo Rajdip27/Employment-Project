@@ -1,4 +1,6 @@
-﻿using Employment.Model.Entities;
+﻿
+
+using Employment.Model.Entities;
 using Employment.Sheared.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

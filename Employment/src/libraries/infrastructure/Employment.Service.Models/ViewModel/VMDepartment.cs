@@ -1,8 +1,8 @@
 ﻿using Employment.Sheared.Common;
 
-namespace Employment.Model.Entities;
+namespace Employment.Service.Models.ViewModel;
 
-public class Department : BaseAuditableEntity, IEntity
+public class VMDepartment:IVM
 {
 	/// <summary>
 	/// Gets or sets the identifier.
@@ -19,6 +19,6 @@ public class Department : BaseAuditableEntity, IEntity
 	/// The name of the department.
 	/// </value>
 	public string DepartmentName { get; set; } = string.Empty;
-	
-	public ICollection<Employee> Employees { get; set; }=new HashSet<Employee>();
+
+	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

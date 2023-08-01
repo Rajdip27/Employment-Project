@@ -1,4 +1,5 @@
 ﻿using Employment.Sheared.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Employment.Model.Entities;
 
@@ -42,7 +43,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The department identifier.
 	/// </value>
-	public long DepartmentId { get; set; }
+	public int DepartmentId { get; set; }
 	/// <summary>
 	/// Gets or sets the joining date.
 	/// </summary>
@@ -86,14 +87,13 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// The picture.
 	/// </value>
 	public string Picture { get; set; } = string.Empty;
-
 	/// <summary>
 	/// Gets or sets the country identifier.
 	/// </summary>
 	/// <value>
 	/// The country identifier.
 	/// </value>
-	public long CountryId { get; set; }
+	public int CountryId { get; set; }
 
 
 	/// <summary>
@@ -102,7 +102,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The state identifier.
 	/// </value>
-	public long StateId { get; set; }
+	public int StateId { get; set; }
 
 	/// <summary>
 	/// Gets or sets the city identifier.
@@ -110,7 +110,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The city identifier.
 	/// </value>
-	public long CityId { get; set; }
+	public int CityId { get; set; }
 
 	/// <summary>
 	/// Gets or sets the country.
@@ -118,6 +118,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The country.
 	/// </value>
+	[ForeignKey("CountryId")]
 	public Country Country { get; set; }
 	/// <summary>
 	/// Gets or sets the state.
@@ -125,6 +126,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The state.
 	/// </value>
+	[ForeignKey("StateId")]
 	public State State { get; set; }
 	/// <summary>
 	/// Gets or sets the city.
@@ -132,6 +134,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The city.
 	/// </value>
+	[ForeignKey("CityId")]
 	public City City { get; set; }
 	/// <summary>
 	/// Gets or sets the department.
@@ -139,6 +142,9 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The department.
 	/// </value>
+	[ForeignKey("DepartmentId")]
 	public Department Department { get; set; }
 	
+
+
 }

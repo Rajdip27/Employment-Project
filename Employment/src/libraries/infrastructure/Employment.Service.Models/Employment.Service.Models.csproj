@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\domain\Employment.Sheared\Employment.Sheared.csproj" />
+  </ItemGroup>
+
 </Project>
