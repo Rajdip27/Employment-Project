@@ -28,7 +28,7 @@ public interface IRepository<in TEntity, IModel, T> where TEntity : class, IEnti
 	/// </summary>
 	/// <param name="id">The identifier.</param>
 	/// <returns></returns>
-	public Task DeleteAsync(T id);
+	public Task <IModel> DeleteAsync(T id);
 	/// <summary>
 	/// Updates the asynchronous.
 	/// </summary>

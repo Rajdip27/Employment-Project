@@ -5,8 +5,7 @@ using MediatR;
 
 namespace Employment.Core.CQRS.Employee.Query;
 
-public class GetAllEmployee
-{
+
 	public record GetAllEmployeeQuery():IRequest<QueryResult<IEnumerable<VMEmployee>>>;
 	public class GetAllEmployeeQueryHandeler : IRequestHandler<GetAllEmployeeQuery, QueryResult<IEnumerable<VMEmployee>>>
 	{
@@ -30,4 +29,4 @@ public class GetAllEmployee
 		}
 	}
 
-}
+

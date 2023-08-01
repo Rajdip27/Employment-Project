@@ -121,7 +121,7 @@ namespace Employment.Service.Models.ViewModel
 		/// </value>
 
 		[JsonIgnore]
-		public VMCountry Country { get; set; }
+		public VMCountry? Country { get; set; }
 		/// <summary>
 		/// Gets or sets the state.
 		/// </summary>
@@ -130,7 +130,7 @@ namespace Employment.Service.Models.ViewModel
 		/// </value>
 
 		[JsonIgnore]
-		public VMState State { get; set; }
+		public VMState? State { get; set; }
 		/// <summary>
 		/// Gets or sets the city.
 		/// </summary>
@@ -138,7 +138,7 @@ namespace Employment.Service.Models.ViewModel
 		/// The city.
 		/// </value>
 		[JsonIgnore]
-		public VMCity City { get; set; }
+		public VMCity? City { get; set; }
 		/// <summary>
 		/// Gets or sets the department.
 		/// </summary>
@@ -146,7 +146,7 @@ namespace Employment.Service.Models.ViewModel
 		/// The department.
 		/// </value>
 		[JsonIgnore]
-		public VMDepartment Department { get; set; }
+		public VMDepartment? Department { get; set; }
 
 	}
 }

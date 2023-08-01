@@ -24,6 +24,8 @@ public static class ServiceCollectionExtensions
 			cfg.RegisterServicesFromAssemblies(typeof(ICore).Assembly);
 			cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 		});
+
+		
 		return services;
 	}
 }

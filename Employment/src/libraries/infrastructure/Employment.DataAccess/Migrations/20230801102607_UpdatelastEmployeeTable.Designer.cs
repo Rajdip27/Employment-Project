@@ -4,6 +4,7 @@ using Employment.DataAccess.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employment.DataAccess.Migrations
 {
     [DbContext(typeof(EmploymentDbContext))]
-    partial class EmploymentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230801102607_UpdatelastEmployeeTable")]
+    partial class UpdatelastEmployeeTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,7 +100,7 @@ namespace Employment.DataAccess.Migrations
                         {
                             Id = 1,
                             CountryName = "Bangladesh",
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 33, 6, 413, DateTimeKind.Unspecified).AddTicks(9296), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 26, 7, 144, DateTimeKind.Unspecified).AddTicks(6917), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             Status = 1
                         });
@@ -139,7 +142,7 @@ namespace Employment.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 33, 6, 410, DateTimeKind.Unspecified).AddTicks(7747), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 26, 7, 143, DateTimeKind.Unspecified).AddTicks(3498), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             DepartmentName = "IT",
                             Status = 1

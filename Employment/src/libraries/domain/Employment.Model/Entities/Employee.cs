@@ -1,5 +1,6 @@
 ﻿using Employment.Sheared.Common;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Employment.Model.Entities;
 
@@ -118,32 +119,32 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The country.
 	/// </value>
-	[ForeignKey("CountryId")]
-	public Country Country { get; set; }
+	[JsonIgnore]
+	public Country? Country { get; set; }
 	/// <summary>
 	/// Gets or sets the state.
 	/// </summary>
 	/// <value>
 	/// The state.
 	/// </value>
-	[ForeignKey("StateId")]
-	public State State { get; set; }
+	[JsonIgnore]
+	public State? State { get; set; }
 	/// <summary>
 	/// Gets or sets the city.
 	/// </summary>
 	/// <value>
 	/// The city.
 	/// </value>
-	[ForeignKey("CityId")]
-	public City City { get; set; }
+	[JsonIgnore]
+	public City? City { get; set; }
 	/// <summary>
 	/// Gets or sets the department.
 	/// </summary>
 	/// <value>
 	/// The department.
 	/// </value>
-	[ForeignKey("DepartmentId")]
-	public Department Department { get; set; }
+	[JsonIgnore]
+	public Department? Department { get; set; }
 	
 
 

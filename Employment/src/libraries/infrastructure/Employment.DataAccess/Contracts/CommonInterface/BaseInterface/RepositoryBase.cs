@@ -44,7 +44,7 @@ public class RepositoryBase<TEntity, IModel, T> : IRepository<TEntity, IModel, T
 	/// Deletes the asynchronous.
 	/// </summary>
 	/// <param name="id">The identifier.</param>
-	public async Task DeleteAsync(T id)
+	public async Task<IModel> DeleteAsync(T id)
 	{
 		var entity = await DbSet.FindAsync(id);
 		if (entity != null)
@@ -52,6 +52,7 @@ public class RepositoryBase<TEntity, IModel, T> : IRepository<TEntity, IModel, T
 			DbSet.Remove(entity);
 			await _dbContext.SaveChangesAsync();
 		}
+		return _mapper.Map<IModel>(entity);
 	}
 	/// <summary>
 	/// Gets all asynchronous.
