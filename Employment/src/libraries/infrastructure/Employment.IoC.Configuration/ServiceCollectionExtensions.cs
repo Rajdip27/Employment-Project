@@ -17,6 +17,7 @@ public static class ServiceCollectionExtensions
 		services.AddDbContext<EmploymentDbContext>(optins => optins.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 		services.AddAutoMapper(typeof(CommonMapper).Assembly);
 		services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+		services.AddTransient<IDepartmentRepository, DepartmentRepository>();
 		services.AddMediatR(x => x.RegisterServicesFromAssemblies(typeof(ICore).Assembly));
 		services.AddValidatorsFromAssembly(typeof(ICore).Assembly);
 		services.AddMediatR(cfg =>

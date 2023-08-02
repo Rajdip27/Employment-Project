@@ -1,4 +1,5 @@
 ﻿using Employment.Sheared.Common;
+using System.Text.Json.Serialization;
 
 namespace Employment.Service.Models.ViewModel;
 
@@ -20,5 +21,6 @@ public class VMDepartment:IVM
 	/// </value>
 	public string DepartmentName { get; set; } = string.Empty;
 
+	[JsonIgnore]
 	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

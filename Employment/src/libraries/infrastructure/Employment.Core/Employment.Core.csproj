@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Employment.Service.Models\Employment.Service.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CQRS\Department\Command\Validator\" />
-  </ItemGroup>
-
 </Project>

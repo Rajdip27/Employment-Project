@@ -3,9 +3,7 @@ using Employment.Service.Models.ViewModel;
 using Employment.Sheared.Models;
 using FluentValidation;
 using MediatR;
-
 namespace Employment.Core.CQRS.Department.Query;
-
 public record GetDepartmentQueryById(int Id):IRequest<QueryResult<VMDepartment>>;
 public class GetDepartmentQueryByIdHandler : IRequestHandler<GetDepartmentQueryById, QueryResult<VMDepartment>>
 {
@@ -16,8 +14,6 @@ public class GetDepartmentQueryByIdHandler : IRequestHandler<GetDepartmentQueryB
         _departmentRepository = departmentRepository;
         _validator = validator;
     }
-
-
     public async Task<QueryResult<VMDepartment>> Handle(GetDepartmentQueryById request, CancellationToken cancellationToken)
 	{
 		var validator= await _validator.ValidateAsync(request, cancellationToken);

@@ -5,13 +5,13 @@ using MediatR;
 
 namespace Employment.Core.CQRS.Department.Query;
 
-public record GetDepartmentAllCommand():IRequest<QueryResult<IEnumerable<VMDepartment>>>;
+public record GetDepartmentAllQuery():IRequest<QueryResult<IEnumerable<VMDepartment>>>;
 
-public class GetDepartmentAllHandler : IRequestHandler<GetDepartmentAllCommand, QueryResult<IEnumerable<VMDepartment>>>
+public class GetDepartmentAllHandler : IRequestHandler<GetDepartmentAllQuery, QueryResult<IEnumerable<VMDepartment>>>
 {
 	private readonly IDepartmentRepository _departmentRepository;
 	public GetDepartmentAllHandler(IDepartmentRepository departmentRepository) => _departmentRepository = departmentRepository;
-	public async Task<QueryResult<IEnumerable<VMDepartment>>> Handle(GetDepartmentAllCommand request, CancellationToken cancellationToken)
+	public async Task<QueryResult<IEnumerable<VMDepartment>>> Handle(GetDepartmentAllQuery request, CancellationToken cancellationToken)
 	{
 		var result = await _departmentRepository.GetAllAsync();
 		;
