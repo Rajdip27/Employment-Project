@@ -20,7 +20,6 @@ public class GetCountoryAllQueryHandeler : IRequestHandler<GetCountoryAllQuery, 
         {
             null => new QueryResult<IEnumerable<VMCountry>>(null,QueryResultTypeEnum.NotFound),
             _ => new QueryResult<IEnumerable<VMCountry>>(result,QueryResultTypeEnum.Success)
-
         };
 	}
 }
