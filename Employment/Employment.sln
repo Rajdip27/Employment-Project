@@ -15,21 +15,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{A68BCA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{10FEF3F4-6A72-47F1-94DA-39EF0BBCFE72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.Model", "src\libraries\domain\Employment.Model\Employment.Model.csproj", "{2D504A3C-D1D8-4828-ABEE-62C88BE5BD42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Model", "src\libraries\domain\Employment.Model\Employment.Model.csproj", "{2D504A3C-D1D8-4828-ABEE-62C88BE5BD42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.Repositories", "src\libraries\domain\Employment.Repositories\Employment.Repositories.csproj", "{2CFC53F9-1539-436D-A707-9B617DF88722}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Repositories", "src\libraries\domain\Employment.Repositories\Employment.Repositories.csproj", "{2CFC53F9-1539-436D-A707-9B617DF88722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.Sheared", "src\libraries\domain\Employment.Sheared\Employment.Sheared.csproj", "{3FDE37B2-2C85-42F6-B761-DEA6CE2B83FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Sheared", "src\libraries\domain\Employment.Sheared\Employment.Sheared.csproj", "{3FDE37B2-2C85-42F6-B761-DEA6CE2B83FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.Core", "src\libraries\infrastructure\Employment.Core\Employment.Core.csproj", "{91493FDF-5C7B-4318-BA3C-27788B748731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Core", "src\libraries\infrastructure\Employment.Core\Employment.Core.csproj", "{91493FDF-5C7B-4318-BA3C-27788B748731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.DataAccess", "src\libraries\infrastructure\Employment.DataAccess\Employment.DataAccess.csproj", "{3D7D65B2-10BA-4C84-ABF8-C814A24A9D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.DataAccess", "src\libraries\infrastructure\Employment.DataAccess\Employment.DataAccess.csproj", "{3D7D65B2-10BA-4C84-ABF8-C814A24A9D00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.IoC.Configuration", "src\libraries\infrastructure\Employment.IoC.Configuration\Employment.IoC.Configuration.csproj", "{C586D21A-966B-4D5F-9346-70207A51EF19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.IoC.Configuration", "src\libraries\infrastructure\Employment.IoC.Configuration\Employment.IoC.Configuration.csproj", "{C586D21A-966B-4D5F-9346-70207A51EF19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.Service.Models", "src\libraries\infrastructure\Employment.Service.Models\Employment.Service.Models.csproj", "{00856CB7-28EA-4F40-87C1-D7186C767F10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Service.Models", "src\libraries\infrastructure\Employment.Service.Models\Employment.Service.Models.csproj", "{00856CB7-28EA-4F40-87C1-D7186C767F10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employment.Backend", "src\App\Employment.Backend\Employment.Backend.csproj", "{65C634FC-875D-45AA-969D-6B24DA57AA6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Backend", "src\App\Employment.Backend\Employment.Backend.csproj", "{65C634FC-875D-45AA-969D-6B24DA57AA6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\City\Command\Validaton\" />
     <Folder Include="CQRS\City\Query\Validation\" />
     <Folder Include="CQRS\State\Command\" />
     <Folder Include="CQRS\State\Query\" />
