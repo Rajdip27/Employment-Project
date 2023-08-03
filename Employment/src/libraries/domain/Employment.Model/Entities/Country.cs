@@ -1,7 +1,5 @@
 ﻿using Employment.Sheared.Common;
-
 namespace Employment.Model.Entities;
-
 public class Country : BaseAuditableEntity, IEntity
 {
 	/// <summary>
