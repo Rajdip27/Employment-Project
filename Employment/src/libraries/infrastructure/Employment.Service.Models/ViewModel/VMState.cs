@@ -1,4 +1,5 @@
 ﻿using Employment.Sheared.Common;
+using System.Text.Json.Serialization;
 
 namespace Employment.Service.Models.ViewModel;
 
@@ -33,13 +34,18 @@ public class VMState:IVM
 	/// <value>
 	/// The country.
 	/// </value>
-	public VMCountry Country { get; set; }
+
+	[JsonIgnore] 
+	public VMCountry ? Country { get; set; }
 	/// <summary>
 	/// Gets or sets the states.
 	/// </summary>
 	/// <value>
 	/// The states.
 	/// </value>
+	[JsonIgnore] 
 	public ICollection<VMCity> Cities { get; set; } = new HashSet<VMCity>();
+	
+	[JsonIgnore] 
 	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }
