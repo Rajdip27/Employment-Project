@@ -33,7 +33,7 @@ public class State : BaseAuditableEntity, IEntity
 	/// <value>
 	/// The country.
 	/// </value>
-	public Country Country { get; set; }
+	public Country ?Country { get; set; }
 	/// <summary>
 	/// Gets or sets the states.
 	/// </summary>

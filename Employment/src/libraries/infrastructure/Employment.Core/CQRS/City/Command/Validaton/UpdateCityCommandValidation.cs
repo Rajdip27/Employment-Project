@@ -2,7 +2,7 @@
 using FluentValidation;
 
 namespace Employment.Core.CQRS.City.Command.Validaton;
-public class UpdateCityCommandValidation: AbstractValidator<VMCity>
+public class UpdateCityCommandValidation: AbstractValidator<UpdateCityCommand>
 {
     public UpdateCityCommandValidation()
     {

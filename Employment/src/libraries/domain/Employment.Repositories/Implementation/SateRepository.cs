@@ -7,9 +7,10 @@ using Employment.Service.Models.ViewModel;
 
 namespace Employment.Repositories.Implementation;
 
-public class CityRepository : RepositoryBase<City, VMCity, int>,ICityRepository
+public class SateRepository : RepositoryBase<State, VMState, int>,ISateRepository
 {
-	public CityRepository(EmploymentDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
+	public SateRepository(EmploymentDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
 	{
+
 	}
 }
