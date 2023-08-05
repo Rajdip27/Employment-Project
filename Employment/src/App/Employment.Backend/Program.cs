@@ -30,6 +30,11 @@ builder.Services.AddSwaggerGen(options =>
 			}
 		});
 });
+
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+	builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 //all Ioc Configuration
 
 var app = builder.Build();
