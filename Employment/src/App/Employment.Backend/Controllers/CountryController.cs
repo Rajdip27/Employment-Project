@@ -19,7 +19,7 @@ public class CountryController : ApiControllerBase
 	[HttpGet("{id:int}")]
 	public async Task<ActionResult<VMCountry>> GetById(int id)
 	{
-		return await HandleQueryAsync(new GetDepartmentQueryById(id));
+		return await HandleQueryAsync(new GetCountryQueryById(id));
 	}
 	[ProducesResponseType(200)]
 	[ProducesResponseType(400)]
