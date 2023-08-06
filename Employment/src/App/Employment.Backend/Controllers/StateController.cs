@@ -30,7 +30,7 @@ public class StateController : ApiControllerBase
 	[HttpGet]
 	public async Task<ActionResult<VMState>> GetAllStudent()
 	{
-		return await HandleQueryAsync(new GetCountoryAllQuery());
+		return await HandleQueryAsync(new GetStateAll());
 	}
 	[ProducesResponseType(200)]
 	[ProducesResponseType(400)]
