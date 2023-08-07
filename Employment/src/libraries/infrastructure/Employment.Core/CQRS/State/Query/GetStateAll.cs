@@ -17,7 +17,7 @@ public class GetStateAllHandler : IRequestHandler<GetStateAll, QueryResult<IEnum
 	}
 	public async Task<QueryResult<IEnumerable<VMState>>> Handle(GetStateAll request, CancellationToken cancellationToken)
 	{
-		var result = await _sateRepository.GetAllAsync();
+		var result = await _sateRepository.GetAllAsync(x=>x.Country);
 		;
 		return result switch
 		{

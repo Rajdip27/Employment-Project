@@ -18,7 +18,7 @@ public class GetCityAllQueryHandaler : IRequestHandler<GetCityAllQuery, QueryRes
     public async Task<QueryResult<IEnumerable<VMCity>>> Handle(GetCityAllQuery request, CancellationToken cancellationToken)
 	{
 		var result = await _cityRepository.GetAllAsync(x=>x.States);
-		//var data= result.in
+		
 
 		;
 		return result switch

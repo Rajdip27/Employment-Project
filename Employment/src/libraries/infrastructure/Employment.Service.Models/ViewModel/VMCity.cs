@@ -26,20 +26,20 @@ public class VMCity:IVM
 	/// The state identifier.
 	/// </value>
 	public int StateId { get; set; }
-	/// <summary>
-	/// Gets or sets the state.
-	/// </summary>
-	/// <value>
-	/// The state.
-	/// </value>
-
-	public VMState ? States { get; set; }
-	/// <summary>
-	/// Gets or sets the employees.
-	/// </summary>
-	/// <value>
-	/// The employees.
-	/// </value>
-
-	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
+    /// <summary>
+    /// Gets or sets the state.
+    /// </summary>
+    /// <value>
+    /// The state.
+    /// </value>
+    
+    public VMState ? States { get; set; }
+    /// <summary>
+    /// Gets or sets the employees.
+    /// </summary>
+    /// <value>
+    /// The employees.
+    /// </value>
+   
+    public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

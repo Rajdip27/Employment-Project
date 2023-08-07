@@ -34,8 +34,8 @@ public static class ServiceCollectionExtensions
 			//cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));
 			// cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<>));
 		});
+       
 
-
-		return services;
+        return services;
 	}
 }

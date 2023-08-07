@@ -26,16 +26,12 @@ public class VMState:IVM
 	/// The country identifier.
 	/// </value>
 	public int CountryId { get; set; }
-
-
 	/// <summary>
 	/// Gets or sets the country.
 	/// </summary>
 	/// <value>
 	/// The country.
 	/// </value>
-
-	[JsonIgnore] 
 	public VMCountry ? Country { get; set; }
 	/// <summary>
 	/// Gets or sets the states.
@@ -43,9 +39,7 @@ public class VMState:IVM
 	/// <value>
 	/// The states.
 	/// </value>
-	[JsonIgnore] 
-	public ICollection<VMCity> Cities { get; set; } = new HashSet<VMCity>();
 	
-	[JsonIgnore] 
+	public ICollection<VMCity> Cities { get; set; } = new HashSet<VMCity>();
 	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

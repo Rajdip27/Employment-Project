@@ -21,6 +21,6 @@ public class VMDepartment:IVM
 	/// </value>
 	public string DepartmentName { get; set; } = string.Empty;
 
-	[JsonIgnore]
+	
 	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }
