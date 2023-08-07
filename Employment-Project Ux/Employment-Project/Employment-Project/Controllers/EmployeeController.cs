@@ -159,8 +159,6 @@ public class EmployeeController : Controller
                 }
                 if (ModelState.IsValid)
                 {
-                    var response = await _httpClient.PutAsJsonAsync($"Employee/{id}", employee);
-
                     if (pictureFile != null && pictureFile.Length > 0)
                     {
                         var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", pictureFile.FileName);
@@ -170,6 +168,7 @@ public class EmployeeController : Controller
                         }
                         employee.picture = $"{pictureFile.FileName}";
                     }
+                    var response = await _httpClient.PutAsJsonAsync($"Employee/{id}", employee);
 
                     if (response.IsSuccessStatusCode)
                     {
