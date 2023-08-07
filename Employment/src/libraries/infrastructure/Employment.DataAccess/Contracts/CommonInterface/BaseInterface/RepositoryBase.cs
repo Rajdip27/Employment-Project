@@ -2,6 +2,7 @@
 using Employment.DataAccess.DatabaseContext;
 using Employment.Sheared.Common;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Employment.DataAccess.Contracts.CommonInterface.BaseInterface;
 
@@ -61,16 +62,28 @@ public class RepositoryBase<TEntity, IModel, T> : IRepository<TEntity, IModel, T
 	public async Task<IEnumerable<IModel>> GetAllAsync()
 	{
 		var entities = await DbSet.ToListAsync();
+
+
 		return _mapper.Map<IEnumerable<IModel>>(entities);
 	}
-	/// <summary>
-	/// Gets the by identifier asynchronous.
-	/// </summary>
-	/// <param name="id">The identifier.</param>
-	/// <returns>
-	/// <br />
-	/// </returns>
-	public async Task<IModel> GetByIdAsync(T id)
+
+    public async Task<List<IModel>> GetAllAsync(params Expression<Func<TEntity, object>>[] includes)
+    {
+		var entities = await includes.Aggregate(
+            _dbContext.Set<TEntity>().AsQueryable(), (current, include) => current.Include(include))
+            .ToListAsync().ConfigureAwait(true);
+
+		return _mapper.Map<List<IModel>>(entities);
+	}
+
+    /// <summary>
+    /// Gets the by identifier asynchronous.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns>
+    /// <br />
+    /// </returns>
+    public async Task<IModel> GetByIdAsync(T id)
 	{
 		var data = await DbSet.FindAsync(id);
 		return _mapper.Map<IModel>(data);

@@ -32,7 +32,7 @@ public class VMCity:IVM
 	/// <value>
 	/// The state.
 	/// </value>
-	[JsonIgnore]
+
 	public VMState ? States { get; set; }
 	/// <summary>
 	/// Gets or sets the employees.
@@ -40,6 +40,6 @@ public class VMCity:IVM
 	/// <value>
 	/// The employees.
 	/// </value>
-	[JsonIgnore] 
+
 	public ICollection<VMEmployee> Employees { get; set; } = new HashSet<VMEmployee>();
 }

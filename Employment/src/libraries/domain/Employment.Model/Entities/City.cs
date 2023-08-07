@@ -32,8 +32,8 @@ public class City : BaseAuditableEntity, IEntity
 	/// <value>
 	/// The state.
 	/// </value>
-	[ForeignKey("StateId")]
-	public State States { get; set; }
+	
+	public State? States { get; set; }
 	/// <summary>
 	/// Gets or sets the employees.
 	/// </summary>

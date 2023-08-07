@@ -1,6 +1,7 @@
 ﻿namespace Employment.Sheared.Common;
 
-public interface IEntity<T>where T :IEquatable<T>
+public interface IEntity<T> 
+	where T :IEquatable<T>
 {
 	T Id { get; set; }	
 }

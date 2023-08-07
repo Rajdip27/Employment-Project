@@ -64,10 +64,6 @@ public class CountryController : Controller
 
                 if (response.IsSuccessStatusCode)
                 {
-
-                   
-                  
-
                     return RedirectToAction("Index");
                 }
                 else
@@ -104,16 +100,12 @@ public class CountryController : Controller
 
         return View(new Country());
 	}
+    [HttpPost]
     public async Task<IActionResult> Delete(int id)
     {
         var response = await _httpClient.DeleteAsync($"Country/{id}");
         if (response.IsSuccessStatusCode)
         {
-
-         
-             
-             
-
             return RedirectToAction("Index");
         }
         else

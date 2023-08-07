@@ -6,4 +6,6 @@ namespace Employment.Repositories.Interface;
 
 public interface ICityRepository:IRepository<City,VMCity,int>
 {
+
+   
 }

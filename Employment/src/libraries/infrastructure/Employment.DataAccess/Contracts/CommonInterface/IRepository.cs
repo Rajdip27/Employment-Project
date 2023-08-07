@@ -1,8 +1,10 @@
 ﻿using Employment.Sheared.Common;
+using System.Linq.Expressions;
 
 namespace Employment.DataAccess.Contracts.CommonInterface;
 
-public interface IRepository<in TEntity, IModel, T> where TEntity : class, IEntity<T>, new()
+public interface IRepository<TEntity, IModel, T> 
+	where TEntity : class, IEntity<T>, new()
 	where IModel : class, IVM<T>, new()
 	where T : IEquatable<T>
 {
@@ -17,12 +19,15 @@ public interface IRepository<in TEntity, IModel, T> where TEntity : class, IEnti
 	/// </summary>
 	/// <returns></returns>
 	public Task<IEnumerable<IModel>> GetAllAsync();
-	/// <summary>
-	/// Deletes the asynchronous.
-	/// </summary>
-	/// <param name="entity">The entity.</param>
-	/// <returns></returns>
-	public Task DeleteAsync(TEntity entity);
+
+	public Task<List<IModel>> GetAllAsync(params Expression<Func<TEntity, object>>[] includes);
+
+    /// <summary>
+    /// Deletes the asynchronous.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns></returns>
+    public Task DeleteAsync(TEntity entity);
 	/// <summary>
 	/// Deletes the asynchronous.
 	/// </summary>
