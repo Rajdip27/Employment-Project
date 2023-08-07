@@ -28,7 +28,7 @@ namespace Employment.Backend.Controllers
 		[ProducesResponseType(401)]
 		[ProducesResponseType(403)]
 		[HttpGet]
-		public async Task<ActionResult<VMCity>> GetAllStudent()
+		public async Task<ActionResult<VMCity>> GetAll()
 		{
 			return await HandleQueryAsync(new GetCityAllQuery());
 		}

@@ -16,8 +16,8 @@ public class Employee
     public int countryId { get; set; }
     public int stateId { get; set; }
     public int cityId { get; set; }
-    public Country country { get; set; }
-    public State state { get; set; }
-    public City city { get; set; }
-    public Department department { get; set; }
+    public Country? country { get; set; }
+    public State? state { get; set; }
+    public City?city { get; set; }
+    public Department? department { get; set; }
 }

@@ -27,7 +27,7 @@ public class CountryController : ApiControllerBase
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpGet]
-	public async Task<ActionResult<VMCountry>> GetAllStudent()
+	public async Task<ActionResult<VMCountry>> GetAll()
 	{
 		return await HandleQueryAsync(new GetCountoryAllQuery());
 	}

@@ -9,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.MapCore(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
 	options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -34,14 +36,14 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
- builder.Services.AddControllers(options =>
-{
-    options.OutputFormatters.RemoveType<SystemTextJsonOutputFormatter>();
-    options.OutputFormatters.Add(new SystemTextJsonOutputFormatter(new JsonSerializerOptions(JsonSerializerDefaults.Web)
-    {
-        ReferenceHandler = ReferenceHandler.Preserve,
-    }));
-});
+// builder.Services.AddControllers(options =>
+//{
+//    options.OutputFormatters.RemoveType<SystemTextJsonOutputFormatter>();
+//    options.OutputFormatters.Add(new SystemTextJsonOutputFormatter(new JsonSerializerOptions(JsonSerializerDefaults.Web)
+//    {
+//        ReferenceHandler = ReferenceHandler.Preserve,
+//    }));
+//});
 
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
@@ -64,6 +66,7 @@ if (app.Environment.IsDevelopment())
 		options.SpecUrl = "/swagger/v1/swagger.json";
 	});
 }
+app.UseCors("corsapp");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

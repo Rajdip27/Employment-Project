@@ -113,32 +113,32 @@ namespace Employment.Service.Models.ViewModel
 		/// </value>
 		public int CityId { get; set; }
 
-		/// <summary>
-		/// Gets or sets the country.
-		/// </summary>
-		/// <value>
-		/// The country.
-		/// </value>
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        /// <value>
+        /// The country.
+        /// </value>
+      
 
-		
-		public VMCountry? Country { get; set; }
-		/// <summary>
-		/// Gets or sets the state.
-		/// </summary>
-		/// <value>
-		/// The state.
-		/// </value>
+        public VMCountry? Country { get; set; }
+        /// <summary>
+        /// Gets or sets the state.
+        /// </summary>
+        /// <value>
+        /// The state.
+        /// </value>
+       
 
-		
-		public VMState? State { get; set; }
-		/// <summary>
-		/// Gets or sets the city.
-		/// </summary>
-		/// <value>
-		/// The city.
-		/// </value>
-		
-		public VMCity? City { get; set; }
+        public VMState? State { get; set; }
+        /// <summary>
+        /// Gets or sets the city.
+        /// </summary>
+        /// <value>
+        /// The city.
+        /// </value>
+      
+        public VMCity? City { get; set; }
 		/// <summary>
 		/// Gets or sets the department.
 		/// </summary>

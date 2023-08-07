@@ -119,7 +119,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The country.
 	/// </value>
-	[JsonIgnore]
+	
 	public Country? Country { get; set; }
 	/// <summary>
 	/// Gets or sets the state.
@@ -127,7 +127,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The state.
 	/// </value>
-	[JsonIgnore]
+	
 	public State? State { get; set; }
 	/// <summary>
 	/// Gets or sets the city.
@@ -135,7 +135,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The city.
 	/// </value>
-	[JsonIgnore]
+	
 	public City? City { get; set; }
 	/// <summary>
 	/// Gets or sets the department.
@@ -143,7 +143,7 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// <value>
 	/// The department.
 	/// </value>
-	[JsonIgnore]
+	
 	public Department? Department { get; set; }
 	
 

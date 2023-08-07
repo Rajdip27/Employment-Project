@@ -25,7 +25,7 @@ public class DepartmentController : ApiControllerBase
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpGet]
-	public async Task<ActionResult<VMDepartment>> GetAllStudent()
+	public async Task<ActionResult<VMDepartment>> GetAll()
 	{
 		return await HandleQueryAsync(new GetDepartmentAllQuery());
 	}

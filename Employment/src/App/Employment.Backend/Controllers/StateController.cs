@@ -28,7 +28,7 @@ public class StateController : ApiControllerBase
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpGet]
-	public async Task<ActionResult<VMState>> GetAllStudent()
+	public async Task<ActionResult<VMState>> GetAll()
 	{
 		return await HandleQueryAsync(new GetStateAll());
 	}

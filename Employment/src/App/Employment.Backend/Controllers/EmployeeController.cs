@@ -22,7 +22,7 @@ public class EmployeeController : ApiControllerBase
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpGet]
-	public async Task<ActionResult<VMEmployee>> GetAllStudent()
+	public async Task<ActionResult<VMEmployee>> GetAll()
 	{
 		return await HandleQueryAsync(new GetAllEmployeeQuery());
 	}

@@ -3,8 +3,12 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="container">
-    <h1>Employee Information</h1>
+<div>
+    <h1 class=" text-center mb-3">Employee Information</h1>
+
+    <p>
+        <a class=" btn btn-primary " asp-action="AddorEdit"><i class="fa-solid fa-plus"></i> Create New</a>
+    </p>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -12,17 +16,12 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th>Gender</th>
-                <th>Department ID</th>
                 <th>Joining Date</th>
-                <th>SSC</th>
-                <th>HSC</th>
-                <th>BSC</th>
-                <th>MSC</th>
-                <th>Picture</th>
                 <th>Country</th>
                 <th>State</th>
                 <th>City</th>
                 <th>Department</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -42,39 +41,23 @@
                         @Html.DisplayFor(modelItem => item.gender)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.departmentId)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.joiningDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.sSC)
+                        @Html.DisplayFor(modelItem => item.country.countryName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.hSC)
+                        @Html.DisplayFor(modelItem => item.state.stateName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.bSC)
+                        @Html.DisplayFor(modelItem => item.city.cityName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.mSC)
+                        @Html.DisplayFor(modelItem => item.department.departmentName)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.picture)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.countryId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.stateId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.cityId)
-                    </td>
-                    <td>
-                        <a class=" btn btn-primary" href="Country/AddorEdit/@item.id"><i class="fa-solid fa-pen-to-square"></i> Edit</a> |
-
-                        <a class="delete-button btn btn-danger" href="Country/Delete/@item.id" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i> Delete</a>
+                    <td style="width: 200px;">
+                        <a class=" btn btn-success" href="Employee/AddorEdit/@item.id"><i class="fa-solid fa-pen-to-square"></i> Edit</a> |
+                        <a class="delete-button btn btn-danger" href="Employee/Delete/@item.id" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             }

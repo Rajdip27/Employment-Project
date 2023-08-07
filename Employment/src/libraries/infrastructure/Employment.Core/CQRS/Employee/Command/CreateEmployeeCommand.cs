@@ -28,6 +28,12 @@ public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeComman
 		var validate = await _validator.ValidateAsync(request, cancellationToken);
 		if (!validate.IsValid) throw new ValidationException(validate.Errors);
 
+
+
+
+
+
+
 		var result = _mapper.Map<Model.Entities.Employee>(request.employee);
 
 		var employee = await _employeeRepository.InsertAsync(result);
