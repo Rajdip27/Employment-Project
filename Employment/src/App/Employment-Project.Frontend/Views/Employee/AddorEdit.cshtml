@@ -91,16 +91,6 @@
                             <span asp-validation-for="countryId" class="text-danger"></span>
                         </div>
                     </div>
-                   
-                    <div class="row mb-3">
-                        <label class="col-md-3 col-form-label"> City</label>
-                        <div class="col-md-9">
-                            <select asp-for="cityId" asp-items="@(ViewBag.CityId)" class="form-control">
-                                <option value="">--Select City--</option>
-                            </select>
-                            <span asp-validation-for="cityId" class="text-danger"></span>
-                        </div>
-                    </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label"> State</label>
                         <div class="col-md-9">
@@ -110,6 +100,16 @@
                             <span asp-validation-for="stateId" class="text-danger"></span>
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label"> City</label>
+                        <div class="col-md-9">
+                            <select asp-for="cityId" asp-items="@(ViewBag.CityId)" class="form-control">
+                                <option value="">--Select City--</option>
+                            </select>
+                            <span asp-validation-for="cityId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
 
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Joining Date</label>
@@ -131,7 +131,7 @@
                         <div class="mt-3" style="text-align:end">
                             <img src="~/images/@Model.picture" alt="img" id="UploadFile" class="img-thumbnail" style="width:170px;" />
 
-                            
+
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,52 @@
 
 
 @section Scripts {
+
+
     <script>
+
+        $(document).ready(function () {
+
+            $('#countryId').change(function () {
+                $.ajax({
+                    type: "get",
+                    url: "/Employee/StateDropdownData",
+                    data: { countryId: $('#countryId').val() },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        var state = "<select id='stateId'>";
+                        state = state + '<option value="">Select State</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            state = state + '<option value=' + data[i].id + '>' + data[i].stateName + '</option>';
+                        }
+                        state = state + '</select>';
+                        $('#stateId').html(state);
+                    }
+                });
+            });
+
+            // Get Cities by State ID
+            $('#stateId').change(function () {
+                $.ajax({
+                    type: "get",
+                    url: "/Employee/CityDropdownData",
+                    data: { stateId: $('#stateId').val() },
+                    datatype: "json",
+                    traditional: true,
+                    success: function (data) {
+                        var city = "<select id='cityId'>";
+                        city = city + '<option value="">Select City</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            city = city + '<option value=' + data[i].id + '>' + data[i].cityName + '</option>';
+                        }
+                        city = city + '</select>';
+                        $('#cityId').html(city);
+                    }
+                });
+            });
+        });
+
         function PreviewImage() {
             var oFReader = new FileReader();
             oFReader.readAsDataURL(document.getElementById("FileUpload").files[0]);
@@ -162,5 +207,7 @@
             };
         };
     </script>
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

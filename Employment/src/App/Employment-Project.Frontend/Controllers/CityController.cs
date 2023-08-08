@@ -1,5 +1,4 @@
-﻿
-using Employment_Project.Frontend.Models.ViewModel;
+﻿using Employment_Project.Frontend.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;

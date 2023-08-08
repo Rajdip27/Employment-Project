@@ -32,6 +32,7 @@ public class EmployeeController : Controller
         var listEmp = await GetAlllEmployee();
         return View(listEmp);
     }
+
     [HttpGet]
     public async Task<IActionResult> AddorEdit(int id)
     {
@@ -69,6 +70,8 @@ public class EmployeeController : Controller
                 ViewData["CityId"] = new SelectList(citylist, "id", "cityName");
 
             }
+
+
             return View(new Employee());
         }
 
@@ -123,7 +126,7 @@ public class EmployeeController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> AddorEdit(int id, Employee  employee, IFormFile pictureFile)
+    public async Task<IActionResult> AddorEdit(int id, Employee employee, IFormFile pictureFile)
     {
         if (ModelState.IsValid)
         {
@@ -189,8 +192,6 @@ public class EmployeeController : Controller
         return View(new Employee());
     }
 
-
-
     public async Task<IActionResult> Delete(int id)
     {
         var response = await _httpClient.DeleteAsync($"Employee/{id}");
@@ -203,5 +204,30 @@ public class EmployeeController : Controller
             return NotFound();
         }
     }
+    public async Task<ActionResult> StateDropdownData(int countryId)
+     {
+        var response = await _httpClient.GetAsync("State");
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            var stateList = JsonConvert.DeserializeObject<List<State>>(content);
+            List<State> filteredStates = stateList.Where(state => state.countryId == countryId).ToList();
+            return Json(filteredStates);
+        }
+        return NotFound();
+    }
 
+
+    public async Task<ActionResult> CityDropdownData(int stateId)
+    {
+        var response = await _httpClient.GetAsync("City");
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            var CityList = JsonConvert.DeserializeObject<List<City>>(content);
+            List<City> filteredStates = CityList.Where(state => state.stateId == stateId).ToList();
+            return Json(filteredStates);
+        }
+        return NotFound();
+    }
 }
