@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Service.Models",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment.Backend", "src\App\Employment.Backend\Employment.Backend.csproj", "{65C634FC-875D-45AA-969D-6B24DA57AA6D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employment-Project.Frontend", "src\App\Employment-Project.Frontend\Employment-Project.Frontend.csproj", "{5BF1FBD6-259A-47BF-8506-B07F805B0205}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{E888F971-3012-451C-85D7-AFEC34D8C984}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{65C634FC-875D-45AA-969D-6B24DA57AA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65C634FC-875D-45AA-969D-6B24DA57AA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65C634FC-875D-45AA-969D-6B24DA57AA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF1FBD6-259A-47BF-8506-B07F805B0205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF1FBD6-259A-47BF-8506-B07F805B0205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF1FBD6-259A-47BF-8506-B07F805B0205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF1FBD6-259A-47BF-8506-B07F805B0205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +94,7 @@ Global
 		{C586D21A-966B-4D5F-9346-70207A51EF19} = {10FEF3F4-6A72-47F1-94DA-39EF0BBCFE72}
 		{00856CB7-28EA-4F40-87C1-D7186C767F10} = {10FEF3F4-6A72-47F1-94DA-39EF0BBCFE72}
 		{65C634FC-875D-45AA-969D-6B24DA57AA6D} = {C59D926D-D984-42E3-BE0C-9FBDCD2C08B5}
+		{5BF1FBD6-259A-47BF-8506-B07F805B0205} = {E888F971-3012-451C-85D7-AFEC34D8C984}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D255FBD3-E2D7-4DF8-828B-8744C70FCA37}
