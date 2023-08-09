@@ -101,7 +101,6 @@ public class CountryController : Controller
 
         return View(new Country());
 	}
- 
     public async Task<IActionResult> Delete(int id)
     {
         var response = await _httpClient.DeleteAsync($"Country/{id}");

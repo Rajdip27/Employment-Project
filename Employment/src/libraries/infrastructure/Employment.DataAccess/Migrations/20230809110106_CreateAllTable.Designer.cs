@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employment.DataAccess.Migrations
 {
     [DbContext(typeof(EmploymentDbContext))]
-    [Migration("20230809042623_CrateAllTable")]
-    partial class CrateAllTable
+    [Migration("20230809110106_CreateAllTable")]
+    partial class CreateAllTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,16 +94,6 @@ namespace Employment.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CountryName = "Bangladesh",
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 590, DateTimeKind.Unspecified).AddTicks(1468), new TimeSpan(0, 6, 0, 0, 0)),
-                            CreatedBy = "1",
-                            Status = 1
-                        });
                 });
 
             modelBuilder.Entity("Employment.Model.Entities.Department", b =>
@@ -142,7 +132,7 @@ namespace Employment.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 588, DateTimeKind.Unspecified).AddTicks(9569), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 17, 1, 6, 152, DateTimeKind.Unspecified).AddTicks(5976), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             DepartmentName = "IT",
                             Status = 1

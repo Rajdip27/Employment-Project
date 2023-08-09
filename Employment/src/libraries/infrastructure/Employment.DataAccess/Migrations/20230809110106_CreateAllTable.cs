@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Employment.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class CrateAllTable : Migration
+    public partial class CreateAllTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -152,14 +152,9 @@ namespace Employment.DataAccess.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Countries",
-                columns: new[] { "Id", "CountryName", "Created", "CreatedBy", "LastModified", "LastModifiedBy", "Status" },
-                values: new object[] { 1, "Bangladesh", new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 590, DateTimeKind.Unspecified).AddTicks(1468), new TimeSpan(0, 6, 0, 0, 0)), "1", null, null, 1 });
-
-            migrationBuilder.InsertData(
                 table: "Departments",
                 columns: new[] { "Id", "Created", "CreatedBy", "DepartmentName", "LastModified", "LastModifiedBy", "Status" },
-                values: new object[] { 1, new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 588, DateTimeKind.Unspecified).AddTicks(9569), new TimeSpan(0, 6, 0, 0, 0)), "1", "IT", null, null, 1 });
+                values: new object[] { 1, new DateTimeOffset(new DateTime(2023, 8, 9, 17, 1, 6, 152, DateTimeKind.Unspecified).AddTicks(5976), new TimeSpan(0, 6, 0, 0, 0)), "1", "IT", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cities_StateId",

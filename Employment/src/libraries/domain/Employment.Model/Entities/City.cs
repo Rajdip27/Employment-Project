@@ -26,20 +26,22 @@ public class City : BaseAuditableEntity, IEntity
 	/// The state identifier.
 	/// </value>
 	public int StateId { get; set; }
-	/// <summary>
-	/// Gets or sets the state.
-	/// </summary>
-	/// <value>
-	/// The state.
-	/// </value>
-	
-	public State? States { get; set; }
+    /// <summary>
+    /// Gets or sets the state.
+    /// </summary>
+    /// <value>
+    /// The state.
+    /// </value>
+
+    [ForeignKey("StateId")]
+    public State States { get; set; }
 	/// <summary>
 	/// Gets or sets the employees.
 	/// </summary>
 	/// <value>
 	/// The employees.
 	/// </value>
+	
 	public ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
 
 

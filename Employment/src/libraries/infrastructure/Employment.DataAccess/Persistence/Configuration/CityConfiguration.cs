@@ -8,8 +8,12 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
 {
 	public void Configure(EntityTypeBuilder<City> builder)
 	{
-		builder.ToTable("Cities");
-		builder.HasKey(x => x.Id);
-		builder.HasOne(x=>x.States).WithMany(x=>x.Cities).HasForeignKey(x=>x.StateId).IsRequired(true);
-	}
+        builder.ToTable("Cities");
+        builder.HasKey(x => x.Id);
+
+        builder.HasOne(x => x.States)   
+            .WithMany(x => x.Cities)
+            .HasForeignKey(x => x.StateId)
+            .IsRequired(true);
+    }
 }

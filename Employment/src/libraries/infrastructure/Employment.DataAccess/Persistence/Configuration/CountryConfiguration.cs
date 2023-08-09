@@ -13,13 +13,7 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
 	{
 		builder.ToTable("Countries");
 		builder.HasKey(x => x.Id);
-		builder.HasData(new
-		{
-			Id = 1,
-			CountryName = "Bangladesh",
-			Created = DateTimeOffset.Now,
-			CreatedBy = "1",
-			Status = EntityStatus.Created
-		});
-	}
+       
+
+    }
 }

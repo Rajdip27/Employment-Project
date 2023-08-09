@@ -1,4 +1,5 @@
 ﻿using Employment.Sheared.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Employment.Model.Entities;
 
@@ -27,13 +28,14 @@ public class State : BaseAuditableEntity, IEntity
 	public int CountryId { get;set; }
 
 
-	/// <summary>
-	/// Gets or sets the country.
-	/// </summary>
-	/// <value>
-	/// The country.
-	/// </value>
-	public Country ?Country { get; set; }
+    /// <summary>
+    /// Gets or sets the country.
+    /// </summary>
+    /// <value>
+    /// The country.
+    /// </value>
+    [ForeignKey("CountryId")]
+    public Country Country { get; set; }
 	/// <summary>
 	/// Gets or sets the states.
 	/// </summary>

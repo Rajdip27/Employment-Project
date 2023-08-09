@@ -10,6 +10,9 @@ public class StateConfiguration : IEntityTypeConfiguration<State>
 	{
 		builder.ToTable("States");
 		builder.HasKey(x => x.Id);
-		builder.HasOne(x=>x.Country).WithMany(x=>x.States).HasForeignKey(x=>x.CountryId).IsRequired(true);
-	}
+        builder.HasOne(x => x.Country)  
+     .WithMany(x => x.States)    
+     .HasForeignKey(x => x.CountryId)
+     .IsRequired(true);
+    }
 }
