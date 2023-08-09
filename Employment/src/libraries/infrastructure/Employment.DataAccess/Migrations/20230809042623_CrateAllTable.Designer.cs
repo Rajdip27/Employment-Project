@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employment.DataAccess.Migrations
 {
     [DbContext(typeof(EmploymentDbContext))]
-    [Migration("20230801102030_UpdateEmployeeTable")]
-    partial class UpdateEmployeeTable
+    [Migration("20230809042623_CrateAllTable")]
+    partial class CrateAllTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,7 +100,7 @@ namespace Employment.DataAccess.Migrations
                         {
                             Id = 1,
                             CountryName = "Bangladesh",
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 20, 30, 151, DateTimeKind.Unspecified).AddTicks(1503), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 590, DateTimeKind.Unspecified).AddTicks(1468), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             Status = 1
                         });
@@ -142,7 +142,7 @@ namespace Employment.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 20, 30, 149, DateTimeKind.Unspecified).AddTicks(5767), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 588, DateTimeKind.Unspecified).AddTicks(9569), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             DepartmentName = "IT",
                             Status = 1

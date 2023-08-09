@@ -97,7 +97,7 @@ namespace Employment.DataAccess.Migrations
                         {
                             Id = 1,
                             CountryName = "Bangladesh",
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 33, 6, 413, DateTimeKind.Unspecified).AddTicks(9296), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 590, DateTimeKind.Unspecified).AddTicks(1468), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             Status = 1
                         });
@@ -139,7 +139,7 @@ namespace Employment.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 1, 16, 33, 6, 410, DateTimeKind.Unspecified).AddTicks(7747), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 10, 26, 23, 588, DateTimeKind.Unspecified).AddTicks(9569), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             DepartmentName = "IT",
                             Status = 1
