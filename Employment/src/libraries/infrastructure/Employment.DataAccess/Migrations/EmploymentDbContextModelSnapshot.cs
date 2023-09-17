@@ -129,7 +129,7 @@ namespace Employment.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTimeOffset(new DateTime(2023, 8, 9, 17, 1, 6, 152, DateTimeKind.Unspecified).AddTicks(5976), new TimeSpan(0, 6, 0, 0, 0)),
+                            Created = new DateTimeOffset(new DateTime(2023, 9, 10, 11, 37, 17, 179, DateTimeKind.Unspecified).AddTicks(3870), new TimeSpan(0, 6, 0, 0, 0)),
                             CreatedBy = "1",
                             DepartmentName = "IT",
                             Status = 1

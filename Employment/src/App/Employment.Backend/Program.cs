@@ -1,8 +1,5 @@
 using Employment.IoC.Configuration;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.OpenApi.Models;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,23 +31,10 @@ builder.Services.AddSwaggerGen(options =>
 			}
 		});
 });
-
-
-// builder.Services.AddControllers(options =>
-//{
-//    options.OutputFormatters.RemoveType<SystemTextJsonOutputFormatter>();
-//    options.OutputFormatters.Add(new SystemTextJsonOutputFormatter(new JsonSerializerOptions(JsonSerializerDefaults.Web)
-//    {
-//        ReferenceHandler = ReferenceHandler.Preserve,
-//    }));
-//});
-
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
 	builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
-//all Ioc Configuration
-
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

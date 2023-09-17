@@ -95,8 +95,6 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// The country identifier.
 	/// </value>
 	public int CountryId { get; set; }
-
-
 	/// <summary>
 	/// Gets or sets the state identifier.
 	/// </summary>
@@ -113,38 +111,39 @@ public class Employee : BaseAuditableEntity,IEntity
 	/// </value>
 	public int CityId { get; set; }
 
-    /// <summary>
-    /// Gets or sets the country.
-    /// </summary>
-    /// <value>
-    /// The country.
-    /// </value>
-    [ForeignKey("CountryId")]
-    public Country Country { get; set; }
+	/// <summary>
+	/// Gets or sets the country.
+	/// </summary>
+	/// <value>
+	/// The country.
+	/// </value>
+	
+
+	public Country Country { get; set; } = new Country();
     /// <summary>
     /// Gets or sets the state.
     /// </summary>
     /// <value>
     /// The state.
     /// </value>
-    [ForeignKey("StateId")]
-    public State State { get; set; }
+   
+    public State State { get; set; }=new State();
     /// <summary>
     /// Gets or sets the city.
     /// </summary>
     /// <value>
     /// The city.
     /// </value>
-    [ForeignKey("CityId")]
-    public City City { get; set; }
+    
+    public City City { get; set; }=new City();
     /// <summary>
     /// Gets or sets the department.
     /// </summary>
     /// <value>
     /// The department.
     /// </value>
-    [ForeignKey("DepartmentId")]
-    public Department Department { get; set; }
+   
+    public Department Department { get; set; }=new Department();
 	
 
 

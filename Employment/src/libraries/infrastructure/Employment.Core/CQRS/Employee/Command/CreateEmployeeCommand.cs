@@ -24,19 +24,21 @@ public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeComman
 
 	public async Task<CommandResult<VMEmployee>> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
 	{
-
 		var validate = await _validator.ValidateAsync(request, cancellationToken);
 		if (!validate.IsValid) throw new ValidationException(validate.Errors);
-
-
-
-
-
-
-
-		var result = _mapper.Map<Model.Entities.Employee>(request.employee);
-
-		var employee = await _employeeRepository.InsertAsync(result);
+        if (request.employee.PictureFile?.Length > 0)
+        {
+            if (request.employee.PictureFile != null && request.employee.PictureFile.Length > 0)
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/profiles", request.employee.PictureFile.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    request.employee.PictureFile.CopyTo(stream);
+                }
+                request.employee.Picture = $"{request.employee.PictureFile.FileName}";
+            }
+        }
+        var employee = await _employeeRepository.InsertAsync(_mapper.Map<Model.Entities.Employee>(request.employee));
 		;
 		return employee switch
 		{

@@ -9,9 +9,13 @@ public class CommonMapper :Profile
     public CommonMapper()
     {
        CreateMap<VMCountry,Country>().ReverseMap();
-       CreateMap<VMCity,City>().ReverseMap();
-       CreateMap<VMState,State>().ReverseMap();
-       CreateMap<VMEmployee, Employee>().ReverseMap();
+       CreateMap<City,VMCity>().ForMember(x=>x.StateName,x=>x.MapFrom(x=>x.States.StateName)).ReverseMap();
+       CreateMap<State,VMState > ().ForMember(x=>x.CountryName,x=>x.MapFrom(x=>x.Country.CountryName)).ReverseMap();
+       CreateMap< Employee,VMEmployee > ().
+            ForMember(x=>x.CountryName,x=>x.MapFrom(x=>x.Country.CountryName)).
+            ForMember(x=>x.StateName,x=>x.MapFrom(x=>x.State.StateName)).
+            ForMember(x=>x.CityName,x=>x.MapFrom(x=>x.City.CityName)).
+            ForMember(x=>x.DepartmentName,x=>x.MapFrom(x=>x.Department.DepartmentName)).ReverseMap();
        CreateMap<VMDepartment, Department>().ReverseMap();
     }
 }

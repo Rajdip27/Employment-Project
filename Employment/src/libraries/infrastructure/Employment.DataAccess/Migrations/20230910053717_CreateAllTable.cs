@@ -154,7 +154,7 @@ namespace Employment.DataAccess.Migrations
             migrationBuilder.InsertData(
                 table: "Departments",
                 columns: new[] { "Id", "Created", "CreatedBy", "DepartmentName", "LastModified", "LastModifiedBy", "Status" },
-                values: new object[] { 1, new DateTimeOffset(new DateTime(2023, 8, 9, 17, 1, 6, 152, DateTimeKind.Unspecified).AddTicks(5976), new TimeSpan(0, 6, 0, 0, 0)), "1", "IT", null, null, 1 });
+                values: new object[] { 1, new DateTimeOffset(new DateTime(2023, 9, 10, 11, 37, 17, 179, DateTimeKind.Unspecified).AddTicks(3870), new TimeSpan(0, 6, 0, 0, 0)), "1", "IT", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cities_StateId",

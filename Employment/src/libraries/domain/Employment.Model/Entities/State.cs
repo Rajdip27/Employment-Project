@@ -34,8 +34,8 @@ public class State : BaseAuditableEntity, IEntity
     /// <value>
     /// The country.
     /// </value>
-    [ForeignKey("CountryId")]
-    public Country Country { get; set; }
+   
+    public Country Country { get; set; } = new Country();
 	/// <summary>
 	/// Gets or sets the states.
 	/// </summary>

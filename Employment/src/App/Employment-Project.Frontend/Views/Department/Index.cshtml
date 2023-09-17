@@ -5,16 +5,7 @@
     int idno = 1;
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-</head>
-<body>
+
 
     <div class="container border mt-5 p-3">
         <p class="text-center">
@@ -42,13 +33,13 @@
                             @idno
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.departmentName)
+                            @Html.DisplayFor(modelItem => item.DepartmentName)
                         </td>
                         <td class="text-end">
 
-                            <a class=" btn btn-success" href="Department/AddorEdit/@item.id"><i class="fa-solid fa-pen-to-square"></i> Edit</a> |
+                            <a class=" btn btn-success" href="Department/AddorEdit/@item.Id"><i class="fa-solid fa-pen-to-square"></i> Edit</a> |
 
-                            <a class="delete-button btn btn-danger" href="Department/Delete/@item.id" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i> Delete</a>
+                            <a class="delete-button btn btn-danger" href="Department/Delete/@item.Id" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i> Delete</a>
 
                         </td>
                     </tr>
@@ -61,13 +52,9 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    
 
     <script>
         new DataTable('#cityTable');
     </script>
 
-</body>
-</html>

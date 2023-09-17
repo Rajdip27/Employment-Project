@@ -2,6 +2,6 @@
 
 public class Country
 {
-    public int id { get; set; }
-    public string countryName { get; set; } = string.Empty;
+    public int Id { get; set; }
+    public string CountryName { get; set; } = string.Empty;
 }

@@ -2,9 +2,9 @@
 
 public class State
 {
-    public int id { get; set; }
-    public string stateName { get; set; } = string.Empty;
-    public int countryId { get; set; }
-    public Country ? country { get; set; }
+    public int Id { get; set; }
+    public string StateName { get; set; } = string.Empty;
+    public int CountryId { get; set; }
+    public string CountryName { get; set; }
    
 }

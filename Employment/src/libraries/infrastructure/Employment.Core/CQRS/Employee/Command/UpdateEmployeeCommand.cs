@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Employment.Model.Entities;
 using Employment.Repositories.Interface;
 using Employment.Service.Models.ViewModel;
 using Employment.Sheared.Models;
@@ -26,8 +25,19 @@ public class UpdateEmployeeCommandHandeler : IRequestHandler<UpdateEmployeeComma
 	{
 		var validate= await _validator.ValidateAsync(request, cancellationToken);
 		if (!validate.IsValid) throw new ValidationException(validate.Errors);
-		var data= _mapper.Map<Model.Entities.Employee>(request.employee);
-		 var result=  await _employeeRepository.UpdateAsync(request.id, data);
+        if (request.employee.PictureFile?.Length > 0)
+        {
+            if (request.employee.PictureFile != null && request.employee.PictureFile.Length > 0)
+            {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/profiles", request.employee.PictureFile.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    request.employee.PictureFile.CopyTo(stream);
+                }
+                request.employee.Picture = $"{request.employee.PictureFile.FileName}";
+            }
+        }
+        var result =  await _employeeRepository.UpdateAsync(request.id, _mapper.Map<Model.Entities.Employee>(request.employee));
 		;
 		return result switch { 
 		null => new CommandResult<VMEmployee>(null,CommandResultTypeEnum.UnprocessableEntity),

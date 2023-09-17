@@ -1,121 +1,50 @@
-﻿
+﻿using Employment_Project.Frontend.Contracts.Base;
 using Employment_Project.Frontend.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Employment_Project.Frontend.Controllers;
 
 public class DepartmentController : Controller
 {
-
-    private readonly HttpClient _httpClient;
-
-    public DepartmentController()
-    {
-        _httpClient = new HttpClient();
-        _httpClient.BaseAddress = new Uri("https://localhost:7225/api/");
-    }
-    private async Task<List<Department>> GetDepartment()
-    {
-        var response = await _httpClient.GetAsync("Department");
-
-        if (response.IsSuccessStatusCode)
-        {
-            var content = await response.Content.ReadAsStringAsync();
-            var departments = JsonConvert.DeserializeObject<List<Department>>(content);
-            return departments;
-        }
-        return new List<Department>();
-    }
-    [HttpGet]
-    public async Task<IActionResult> Index()
-    {
-        var departments = await GetDepartment();
-        return View(departments);
-    }
-
-
-
+    private IEmploymentClient _employmentClient;
+    public DepartmentController(IEmploymentClient employmentClient) => _employmentClient = employmentClient;
+    public async Task<IActionResult> Index() => View(await _employmentClient.GetAllDepartment());
     [HttpGet]
     public async Task<IActionResult> AddorEdit(int id)
     {
-        if (id == 0)
-            return View(new Department());
+        if (id == 0) return View(new Department());
         else
         {
-            var response = await _httpClient.GetAsync($"Department/{id}");
-            if (response.IsSuccessStatusCode)
-            {
-                var departments = await response.Content.ReadFromJsonAsync<Department>();
-                return View(departments);
-            }
-            else
-            {
-                return NotFound();
-            }
+            var data = await _employmentClient.GetDepartmentById(id);
+            return View(data);
         }
     }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> AddorEdit(int id, Department department)
+    [HttpPost, ValidateAntiForgeryToken]
+    public async Task<IActionResult> AddorEdit(Department department, int id)
     {
         if (ModelState.IsValid)
         {
             if (id == 0)
             {
-                //save data
-                var response = await _httpClient.PostAsJsonAsync("Department", department);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Failed to create the department.");
-                    return View(department);
-                }
+                await _employmentClient.AddDepartment(department);
+                return RedirectToAction("Index");
             }
             else
             {
-                //update Data
-                if (id != department.id)
-                {
-                    return BadRequest();
-                }
                 if (ModelState.IsValid)
                 {
-                    var response = await _httpClient.PutAsJsonAsync($"Department/{id}", department);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Failed to update the country.");
-                        return View(department);
-                    }
+                    await _employmentClient.UpdateDepartment(id, department);
+                    return RedirectToAction("Index");
                 }
                 return View(department);
             }
         }
         return View(new Department());
     }
-
-
-    public async Task<IActionResult> Delete(int id)
+    public async Task<ActionResult> Delete(int id)
     {
-        var response = await _httpClient.DeleteAsync($"Department/{id}");
-        if (response.IsSuccessStatusCode)
-        {
-            return RedirectToAction("Index");
-        }
-        else
-        {
-            return NotFound();
-        }
+        await _employmentClient.DeleteDepartment(id);
+        return RedirectToAction("Index");
     }
+
 }

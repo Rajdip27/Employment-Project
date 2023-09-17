@@ -3,7 +3,7 @@
 public class Department
 {
 
-    public int id { get; set; }
-    public string departmentName { get; set; } = string.Empty; 
+    public int Id { get; set; }
+    public string DepartmentName { get; set; } = string.Empty; 
    
 }

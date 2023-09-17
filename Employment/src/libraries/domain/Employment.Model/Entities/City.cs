@@ -32,16 +32,13 @@ public class City : BaseAuditableEntity, IEntity
     /// <value>
     /// The state.
     /// </value>
-
-    [ForeignKey("StateId")]
-    public State States { get; set; }
+    public State States { get; set; }=new State();
 	/// <summary>
 	/// Gets or sets the employees.
 	/// </summary>
 	/// <value>
 	/// The employees.
 	/// </value>
-	
 	public ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
 
 

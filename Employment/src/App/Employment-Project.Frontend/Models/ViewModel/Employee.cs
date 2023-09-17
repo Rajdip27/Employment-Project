@@ -2,22 +2,25 @@
 
 public class Employee
 {
-    public int id { get; set; }
-    public string name { get; set; }
-    public string address { get; set; }
-    public string gender { get; set; }
-    public int departmentId { get; set; }
-    public DateTime joiningDate { get; set; }
-    public bool sSC { get; set; }
-    public bool hSC { get; set; }
-    public bool bSC { get; set; }
-    public bool mSC { get; set; }
-    public string picture { get; set; }
-    public int countryId { get; set; }
-    public int stateId { get; set; }
-    public int cityId { get; set; }
-    public Country? country { get; set; }
-    public State? state { get; set; }
-    public City?city { get; set; }
-    public Department? department { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Address { get; set; }
+    public string Gender { get; set; }
+    public int DepartmentId { get; set; }
+    public string DepartmentName { get; set; }
+    public DateTime JoiningDate { get; set; }
+    public bool SSC { get; set; }
+    public bool HSC { get; set; }
+    public bool BSC { get; set; }
+    public bool MSC { get; set; }
+    public string Picture { get; set; }
+    public int CountryId { get; set; }
+    public string CountryName { get; set; }
+    public int StateId { get; set; }
+    public string StateName { get; set; }
+    public int CityId { get; set; }
+    public string CityName { get; set; }
+    public IFormFile PictureFile {  get; set; }
+
+
 }

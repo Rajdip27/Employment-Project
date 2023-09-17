@@ -17,50 +17,50 @@
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label"> Name</label>
                         <div class="col-md-9">
-                            <input asp-for="name" class="form-control" />
-                            <span asp-validation-for="name" class="text-danger"></span>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Gender</label>
                         <div class="col-md-9 pt-2">
                             <label class="radio-inline mx-2">
-                                @Html.RadioButtonFor(model => model.gender, "Male", htmlAttributes: new { @class = "form-check-input" }) Male
+                                @Html.RadioButtonFor(model => model.Gender, "Male", htmlAttributes: new { @class = "form-check-input" }) Male
                             </label>
                             <label class="radio-inline mx-2">
-                                @Html.RadioButtonFor(model => model.gender, "Female", htmlAttributes: new { @class = "form-check-input" }) Female
+                                @Html.RadioButtonFor(model => model.Gender, "Female", htmlAttributes: new { @class = "form-check-input" }) Female
                             </label>
                             <label class="radio-inline mx-2">
-                                @Html.RadioButtonFor(model => model.gender, "Other", htmlAttributes: new { @class = "form-check-input" }) Other
+                                @Html.RadioButtonFor(model => model.Gender, "Other", htmlAttributes: new { @class = "form-check-input" }) Other
                             </label>
                             <br />
-                            <span asp-validation-for="gender" class="text-danger"></span>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Education</label>
                         <div class="col-md-9 pt-2">
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" asp-for="sSC" />
-                                <label class="form-check-label" asp-for="sSC">
+                                <input type="checkbox" class="form-check-input" asp-for="SSC" />
+                                <label class="form-check-label" asp-for="SSC">
                                     SSC
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" asp-for="hSC" />
-                                <label class="form-check-label" asp-for="hSC">
+                                <input type="checkbox" class="form-check-input" asp-for="HSC" />
+                                <label class="form-check-label" asp-for="HSC">
                                     HSC
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" asp-for="bSC" />
-                                <label class="form-check-label" asp-for="bSC">
+                                <input type="checkbox" class="form-check-input" asp-for="BSC" />
+                                <label class="form-check-label" asp-for="BSC">
                                     BSC
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" class="form-check-input" asp-for="mSC" />
-                                <label class="form-check-label" asp-for="mSC">
+                                <input type="checkbox" class="form-check-input" asp-for="MSC" />
+                                <label class="form-check-label" asp-for="MSC">
                                     MSC
                                 </label>
                             </div>
@@ -69,44 +69,44 @@
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Address</label>
                         <div class="col-md-9">
-                            <textarea asp-for="address" class="form-control"></textarea>
-                            <span asp-validation-for="address" class="text-danger"></span>
+                            <textarea asp-for="Address" class="form-control"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label"> Department</label>
                         <div class="col-md-9">
-                            <select asp-for="departmentId" asp-items="@(ViewBag.DeptId)" class="form-control">
+                            <select asp-for="DepartmentId" asp-items="@(ViewBag.DeptId)" class="form-control">
                                 <option value="">--Select Department--</option>
                             </select>
-                            <span asp-validation-for="cityId" class="text-danger"></span>
+                            <span asp-validation-for="CityId" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Country</label>
                         <div class="col-md-9">
-                            <select asp-for="countryId" class="form-control" asp-items="ViewBag.countryId">
+                            <select asp-for="CountryId" class="form-control" asp-items="ViewBag.countryId">
                                 <option value="">--Select Country--</option>
                             </select>
-                            <span asp-validation-for="countryId" class="text-danger"></span>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label"> State</label>
                         <div class="col-md-9">
-                            <select asp-for="stateId" asp-items="@(ViewBag.StateId)" class="form-control">
+                            <select asp-for="StateId" asp-items="@(ViewBag.StateId)" class="form-control">
                                 <option value="">--Select State--</option>
                             </select>
-                            <span asp-validation-for="stateId" class="text-danger"></span>
+                            <span asp-validation-for="StateId" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label"> City</label>
                         <div class="col-md-9">
-                            <select asp-for="cityId" asp-items="@(ViewBag.CityId)" class="form-control">
+                            <select asp-for="CityId" asp-items="@(ViewBag.CityId)" class="form-control">
                                 <option value="">--Select City--</option>
                             </select>
-                            <span asp-validation-for="cityId" class="text-danger"></span>
+                            <span asp-validation-for="CityId" class="text-danger"></span>
                         </div>
                     </div>
                     
@@ -114,8 +114,8 @@
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Joining Date</label>
                         <div class="col-md-9">
-                            <input asp-for="joiningDate" type="date" class="form-control" />
-                            <span asp-validation-for="joiningDate" class="text-danger"></span>
+                            <input asp-for="JoiningDate" type="date" class="form-control" />
+                            <span asp-validation-for="JoiningDate" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -125,11 +125,11 @@
                     <div class="row mb-3">
                         <label class="col-md-3 col-form-label">Picture</label>
                         <div class="col-md-9">
-                            <input type="file" asp-for="picture" class="form-control" name="pictureFile" accept="image/*" id="FileUpload" onchange="PreviewImage()" />
-                            <span asp-validation-for="picture" class="text-danger"></span>
+                            <input type="file" asp-for="Picture" class="form-control" name="pictureFile" accept="image/*" id="FileUpload" onchange="PreviewImage()" />
+                            <span asp-validation-for="Picture" class="text-danger"></span>
                         </div>
                         <div class="mt-3" style="text-align:end">
-                            <img src="~/images/@Model.picture" alt="img" id="UploadFile" class="img-thumbnail" style="width:170px;" />
+                            <img src="~/images/@Model.Picture" alt="img" id="UploadFile" class="img-thumbnail" style="width:170px;" />
 
 
                         </div>
@@ -144,13 +144,7 @@
         </form>
     </div>
 
-
 </div>
-
-
-
-
-
 @section Scripts {
 
 
