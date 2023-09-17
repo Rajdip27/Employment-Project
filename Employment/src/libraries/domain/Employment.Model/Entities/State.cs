@@ -28,13 +28,13 @@ public class State : BaseAuditableEntity, IEntity
 	public int CountryId { get;set; }
 
 
-    /// <summary>
-    /// Gets or sets the country.
-    /// </summary>
-    /// <value>
-    /// The country.
-    /// </value>
-   
+	/// <summary>
+	/// Gets or sets the country.
+	/// </summary>
+	/// <value>
+	/// The country.
+	/// </value>
+	[NotMapped]
     public Country Country { get; set; } = new Country();
 	/// <summary>
 	/// Gets or sets the states.
