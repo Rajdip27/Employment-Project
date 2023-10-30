@@ -18,48 +18,37 @@ public class StateController : ApiControllerBase
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpGet("{id:int}")]
-	public async Task<ActionResult<VMState>> GetById(int id)
-	{
-		return await HandleQueryAsync(new GetStateById(id));
-	}
-	[ProducesResponseType(200)]
+	public async Task<ActionResult<VMState>> GetById(int id) => await HandleQueryAsync(new GetStateById(id));
+
+    [ProducesResponseType(200)]
 	[ProducesResponseType(400)]
 	[ProducesResponseType(404)]
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpGet]
-	public async Task<ActionResult<VMState>> GetAll()
-	{
-		return await HandleQueryAsync(new GetStateAll());
-	}
-	[ProducesResponseType(200)]
+	public async Task<ActionResult<VMState>> GetAll() => await HandleQueryAsync(new GetStateAll());
+
+    [ProducesResponseType(200)]
 	[ProducesResponseType(400)]
 	[ProducesResponseType(404)]
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpPost]
-	public async Task<ActionResult<VMState>> Create([FromBody] VMState command)
-	{
-		return await HandleCommandAsync(new CrateStateCommand(command));
-	}
-	[ProducesResponseType(200)]
+	public async Task<ActionResult<VMState>> Create([FromBody] VMState command) => await HandleCommandAsync(new CrateStateCommand(command));
+
+    [ProducesResponseType(200)]
 	[ProducesResponseType(400)]
 	[ProducesResponseType(404)]
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpPut("{id:int}")]
-	public async Task<ActionResult<VMState>> Update(int id, VMState command)
-	{
-		return await HandleCommandAsync(new UpdateStateCommand(id, command));
-	}
-	[ProducesResponseType(200)]
+	public async Task<ActionResult<VMState>> Update(int id, VMState command) => await HandleCommandAsync(new UpdateStateCommand(id, command));
+
+    [ProducesResponseType(200)]
 	[ProducesResponseType(400)]
 	[ProducesResponseType(404)]
 	[ProducesResponseType(401)]
 	[ProducesResponseType(403)]
 	[HttpDelete("{id:int}")]
-	public async Task<ActionResult<VMState>> Delete(int id)
-	{
-		return await HandleCommandAsync(new DeleteStateCommand(id));
-	}
+	public async Task<ActionResult<VMState>> Delete(int id) => await HandleCommandAsync(new DeleteStateCommand(id));
 }
